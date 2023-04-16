@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+/* Telas pequenas */
+
+@media screen and (min-width: 320px) and (max-width: 375px) {
+
+     
+     body {
+         height: 100vh;
+     }
+
+
+     main {
+     
+         margin-top: 100px;
+     }
+    
+    
+    section.login {
+        
+        height: 70vh;
+        
+    }
+    
+    div.formulario {
+        
+        height: 100%;
+    }
+    
+    
+}
+

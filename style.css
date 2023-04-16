@@ -1,0 +1,298 @@
+@charset "UTF-8";
+
+/* 1. Mobile */
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+:root {
+    
+    --cor01: #000000;
+    --cor02: #6c6c6c;
+    --cor03: #ffffff;
+    
+}
+
+
+
+ body {
+    height: 80vh;
+    background-image: linear-gradient(to bottom, #000000, #3c3c3c, #949494);
+}
+
+
+/* Pai para o display flex */
+main {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+    
+    
+}
+
+/* Poderia usar o position relative no main e o absolute no login
+mas eu queria usar display flex para experimentar */
+
+
+section.login {
+    background-color: black;
+    width: 55vw;
+    height: 58vh;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px #00000080;
+    overflow: hidden;
+    
+}
+
+/* overflow: hidden serve para ocultar detalhes da div dentro do 
+pai para que somente o pai apareça, nesse caso foi a borda radius
+. */
+
+div.foto {
+    background-color: black;
+    background-image: url('Imagens/tec.jpg');
+    background-size: cover;
+    width: 55vw;
+    height: 20vh;
+}
+
+
+div.formulario {
+    background-color: white;
+    height: 36vh;
+    padding: 8px;
+  }
+
+
+.formulario-texto-h {
+    padding: 10px;
+    text-align: center;
+}
+
+.formulario-texto-p {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+
+.formulario-campo {
+    
+    background-color: gray;
+    margin-bottom: 5px;
+    height: 26px;
+    border-radius: 8px;
+      
+}
+    
+
+.input {
+ 
+ margin: 0px 0px 0px 30px;
+ padding: 3px;
+ background-color: white;
+ border: none;
+ width: calc(100% - 40px);
+ height: 100%;
+ border-radius: 4px;
+ transform: translateY(-22px);
+ 
+}
+
+/* No input foi usado cálculo para width da div(formulario-campo
+    - a width do icone ).
+    
+    transform: translateY (eixo y é vertical) ou seja, -px ele
+    sobe e +px ele desce. Foi usado porque no width acabou 
+    quebrando a linha e fazendo o input ir para baixo. Poderia 
+    usar tbm margin top mas nao é o ideal.*/
+
+.material-symbols-outlined { 
+font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 48
+ }
+ 
+ i#icone {
+     background-color: #0;
+     color: white;
+     font-size: 1em;
+     width: 15px;
+     padding: 6px;
+     
+    
+ }
+
+
+.formulario-botao-caixa {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+    
+
+.botao {    
+    height: 4vh;
+    width: 100%;
+    border: none;
+    background-color: #afafafb6;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.botao:hover {
+    background-color: #b2b2b2;
+}
+
+
+/* sempre coloque o display flex em uma caixa pai ou seja 
+a caixa pai nesse caso é um div e s filhos são os botões. */
+
+/* coloque também a direção dessa caixa, nesse caso a direção é
+em coluna. */
+
+/* Justify content é para alinhar os elementos(filhos) em uma eixo
+principal. */
+
+
+
+
+/* 2. Tela grande  */
+@media screen and (min-width: 768px) {
+    
+    body {
+        
+        height: 100vh;
+        width: 100vw;
+        
+    }
+    
+    
+    section.login {      
+         display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         margin-top: 70%;
+         width: 80vw;
+         height: 20vh;
+    }
+    
+    div.foto {
+        
+        height: 100%;
+        background-position: center center;
+        background-size: auto;
+        
+    }
+  
+    div.formulario {
+        
+        width: 100%;
+        height: 92%;
+        padding: 20px;
+        
+    
+    }
+    
+    
+     .formulario-texto-h {
+       padding: 10px;
+       font-size: 2em;
+       text-align: center;
+    }
+  
+  
+     .formulario-texto-p {
+         text-align: center;
+     }
+  
+  
+  i#icone {
+      padding: 10px;
+  }
+ 
+  
+  .formulario-campo {
+      height: 38px;
+  }
+  
+  .input {
+      
+      font-size: 1em;
+      transform: translateY(-29px);
+      
+  }
+    
+    
+ .formulario-botao-caixa {
+     margin-top: 20px;
+ } 
+    
+    .botao {
+        
+        width: 90%;
+        height: 3vh;
+        font-size: 1vh;
+        
+    }
+    
+    
+}
+
+
+
+/* 3. Tela Grande landscape */
+
+@media screen and (min-width: 768px) and (orientation: landscape) {
+    
+    section.login {
+        
+        margin-top: 1%;
+        height: 350px;
+        
+    }
+    
+    
+    div.foto {
+        order: 1;
+        height: 100%;
+        background-position: center bottom;
+        
+    }
+    
+    div.formulario {
+        order: 0;
+        padding: 12px;
+        width: 70%;
+       
+    }
+   
+    
+   /* Outra forma de mudar a posição das divs é colocando display
+   block nas que vão ser mudadas e por o parâmetro float: 
+   direção.
+   
+   */ 
+    
+    
+    .input {
+        
+        font-size: 1em;
+    }
+    
+    
+    .botao {
+        width: 80%;
+        height: 100%;
+        font-size: 1em;
+        padding: 10px;
+    
+    
+}
